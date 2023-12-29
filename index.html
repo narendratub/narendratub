@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text-to-Speech Recorder (Hindi)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #e0f2f1; /* Light green background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .speech-box {
+      border: 2px solid #333;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .text-input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    .voice-select,
+    .speed-range {
+      width: 80%;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    .play-btn,
+    .record-btn,
+    .delete-btn,
+    .reset-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="speech-box">
+    <h1>Text-to-Speech Recorder (Hindi)</h1>
+    <input type="text" class="text-input" id="textToSpeak" placeholder="Enter text...">
+    <select class="voice-select" id="voice">
+      <option value="hi-IN">Hindi Female</option>
+      <option value="hi-IN-x-hie-local">Hindi Male</option>
+      <!-- Add more Hindi voices here -->
+    </select>
+    <input type="range" class="speed-range" id="speed" min="0.1" max="2" step="0.1" value="1">
+    <button class="play-btn" onclick="speakText()">Speak</button>
+    <button class="record-btn" onclick="startRecording()">Start Recording</button>
+    <button class="delete-btn" onclick="deleteRecording()" disabled>Delete Recording</button>
+    <button class="reset-btn" onclick="resetAll()">Reset</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
